@@ -3,13 +3,14 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 // TODO: Create an array of questions for user input
 const path = require('path');
-const README = require('./utilis/generateMarkdown');
+const generateMarkdown = require('./utilis/generateMarkdown');
+
 
 
 const questions = [
     {
         type: 'input',
-        name: 'title',
+        name: 'Title',
         message: 'Name of your project: '
     },
     {
@@ -24,12 +25,12 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'Install',
+        name: 'install',
         message: 'Installation guide'
     },
     {
         type: 'input',
-        name: 'Use',
+        name: 'use',
         message: 'Usage: '
     },
     {
@@ -61,22 +62,34 @@ const questions = [
         name: 'github',
         message: 'What is your github username?'
     },
-    
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email?'
+    },
+    {
+        type: 'input',
+        name: 'name',
+        message: 'What is your name?'
+    },
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    return fs.writeFile(path.join(process.cwd(), fileName), data);
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then((res) => {
+    .then((responses) => {
         console.log('Create your README!');
-        writeToFile('README.md', )
+        writeToFile('README.md', generateMarkdown({ ...responses}));
     })
-}
+//     .catch (err); {
+//         console.log(err);
+//     }
+    }
 
 // Function call to initialize app
 init();
