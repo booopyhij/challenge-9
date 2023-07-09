@@ -1,14 +1,15 @@
-# undefined
+# README generator
 
-  (https://img.shields.io/badge/license-MIT License-brightgreen.svg)
+  (https://img.shields.io/badge/license-MIT-brightgreen.svg)
 
-  ## Table pf contents
+  ## Table of contents
 
   * [Description](#Description)
 
   * [Installation](#Install)
 
   * [Usage](#Use)
+
 
   * [Questions](#Questions)
 
@@ -20,19 +21,20 @@
 
   
   ## Description
-  This application will allow users to generate a readme
+  this application will allow users to generate a README.md
  
   ## Installation 
-  Use npm i in the CLi in order to download the package.json
+  Use npm i in the CLI to download the package.json
   
   ## Usage
-  in the CLI use the command node index.js and follow the prompts
+  In the CLI use node index.js and follow the prompts
+
  
   ## Questions
     
   Please reach out if you have any questions regarding this application. 
 
-  * Name - Mike Phillips
+  * Name - Mike phillips
   * Email - mphillips2017@gmail.com
   * GitHub - [booopyhij](https://github.com/booopyhij/)
   
@@ -44,7 +46,8 @@
   n/a
 
   ## Testing
-  ran tests through the CLI
+  CLI testing done to debug
 
-  ## License: Licensed underMIT LicenseLicense
+
+  ## License: Licensed under MIT License
 

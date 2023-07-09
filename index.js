@@ -1,16 +1,16 @@
-// TODO: Include packages needed for this application
+// allows inquirer and fs to be used in this app
 const inquirer = require('inquirer');
 const fs = require('fs');
-// TODO: Create an array of questions for user input
+// allows the path method to be used and the secondary js
 const path = require('path');
 const generateMarkdown = require('./utilis/generateMarkdown');
 
 
-
+// Array that conatains all of my questions for the readme
 const questions = [
     {
         type: 'input',
-        name: 'Title',
+        name: 'title',
         message: 'Name of your project: '
     },
     {
@@ -38,7 +38,7 @@ const questions = [
         name: 'license',
         message: 'Choose your license',
         choices: [
-            "MIT License",
+            "MIT",
             "none",
           ],
     },
@@ -74,12 +74,15 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
+// this function writes the readme.md based upon the responses from the user
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
-// TODO: Create a function to initialize app
+// this initializes the application. I have left the catch(err) in
+// only because it was a good learning tool. Adding that in broke the code 
+// so that it would not allow for user input in the CLI
+// also adding in fs. to the writefile on line 90 renders it broken as well
 function init() {
     inquirer.prompt(questions)
     .then((responses) => {

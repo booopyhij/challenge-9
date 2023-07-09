@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// This allows for the license badge to be added to the readme
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license !== 'None') {
@@ -8,7 +8,7 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
+// this function links the license to the readme
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== 'none') {
@@ -18,23 +18,23 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
+// This function allows the license to be appended
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== 'None') {
-    return '## License: Licensed under' + license + 'License';
+    return '## License: Licensed under ' + license + ' License';
   } else {
     return '';
   }
 }
 
-// TODO: Create a function to generate markdown for README
+// the function that actually creates the read me
 function generateMarkdown(data) {
   return `# ${data.title}
 
   ${renderLicenseBadge(data.license)}
 
-  ## Table pf contents
+  ## Table of contents
 
   * [Description](#Description)
 
@@ -84,4 +84,5 @@ function generateMarkdown(data) {
 `;
 }
 
+// allows for this js file to be used inside the index.js
 module.exports = generateMarkdown;
