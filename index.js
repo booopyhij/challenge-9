@@ -10,7 +10,7 @@ const generateMarkdown = require('./utilis/generateMarkdown');
 const questions = [
     {
         type: 'input',
-        name: 'Title',
+        name: 'title',
         message: 'Name of your project: '
     },
     {
@@ -38,7 +38,7 @@ const questions = [
         name: 'license',
         message: 'Choose your license',
         choices: [
-            "MIT License",
+            "MIT",
             "none",
           ],
     },
@@ -82,6 +82,7 @@ function writeToFile(fileName, data) {
 // this initializes the application. I have left the catch(err) in
 // only because it was a good learning tool. Adding that in broke the code 
 // so that it would not allow for user input in the CLI
+// also adding in fs. to the writefile on line 90 renders it broken as well
 function init() {
     inquirer.prompt(questions)
     .then((responses) => {
