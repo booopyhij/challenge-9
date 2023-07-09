@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 // TODO: Create an array of questions for user input
 const path = require('path');
-const README = require('./Readme.js');
+const README = require('./utilis/generateMarkdown');
 
 
 const questions = [
@@ -34,8 +34,8 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'liscense',
-        message: 'Choose your liscense',
+        name: 'license',
+        message: 'Choose your license',
         choices: [
             "MIT License",
             "none",
@@ -55,6 +55,11 @@ const questions = [
         type: 'input',
         name: 'Questions',
         message: 'Where to ask questions: '
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'What is your github username?'
     },
     
 ];
